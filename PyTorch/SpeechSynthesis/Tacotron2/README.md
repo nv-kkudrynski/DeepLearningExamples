@@ -43,7 +43,7 @@ Table of Contents
 * [Changelog](#changelog)
 * [Known issues](#known-issues)
 
-## The model
+## Model overview
 
 This text-to-speech (TTS) system is a combination of two neural network
 models:
@@ -251,7 +251,7 @@ The speech is generated from a text file that is passed with `-i` argument. To r
 inference in mixed precision, use the `--amp-run` flag. The output audio will
 be stored in the path specified by the `-o` argument.
 
-## Details
+## Advanced
 
 The following sections provide greater details of the dataset, running
 training and inference, and the training results.
@@ -460,6 +460,8 @@ called `losses`)
             scaled_losses.backward()
         ```
 
+## Performance
+
 ## Benchmarking
 
 The following section shows how to run benchmarks measuring the model
@@ -653,7 +655,9 @@ Results are measured in the number of output audio samples per second.<sup>1</su
 
 To achieve these same results, follow the steps in the [Quick Start Guide](#quick-start-guide).
 
-## Changelog
+## Release notes
+
+### Changelog
 March 2019
 * Initial release
 
@@ -662,5 +666,5 @@ June 2019
 * Data preprocessing for Tacotron 2 training
 * Fixed dropouts on LSTMCells
 
-## Known issues
+### Known issues
 There are no known issues in this release.

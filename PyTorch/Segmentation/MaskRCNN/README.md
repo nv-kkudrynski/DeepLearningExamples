@@ -25,7 +25,7 @@ This repository provides a script and recipe to train and infer on MaskRCNN to a
 * [Changelog](#changelog)
 * [Known issues](#known-issues)
 
-## The model
+## Model overview
 
 Mask R-CNN is a convolution based neural network for the task of object instance segmentation. The paper describing the model can be found [here](https://arxiv.org/abs/1703.06870). NVIDIA’s Mask R-CNN 19.2 is an optimized version of [Facebook’s implementation](https://github.com/facebookresearch/maskrcnn-benchmark), leveraging mixed precision arithmetic and tensor cores on V100 GPUs for 1.3x faster training times while maintaining target accuracy. Because this model trains with mixed precision tensor cores on Volta, researchers can get results much faster than training without tensor cores.  This model is tested against each NGC monthly container release to ensure consistent accuracy and performance over time.
 
@@ -184,7 +184,7 @@ Model predictions get saved in the `<OUTPUT_DIR>/inference` directory.
 
 To perform inference and skip computation of mAP scores, issue the `--skip-eval` flag. Performance is reported in seconds per iteration per GPU. The benchmarking scripts can be used to extract frames per second on training and inference.
 
-## Details
+## Advanced
 The following sections provide greater details of the dataset, running training and inference, and the training results.
 
 ### Command line arguments
@@ -365,6 +365,8 @@ For information about:
 - Techniques used for [mixed precision training, see the Mixed-Precision Training of Deep Neural Networks](https://devblogs.nvidia.com/mixed-precision-training-deep-neural-networks/) blog.
 - APEX tools for mixed precision training, see the [NVIDIA Apex: Tools for Easy Mixed-Precision Training in PyTorch](https://devblogs.nvidia.com/apex-pytorch-easy-mixed-precision-training).
 
+## Performance
+
 ## Benchmarking
 Benchmarking can be performed for both training and inference. Both scripts run the Mask R-CNN model using the parameters defined in `configs/e2e_mask_rcnn_R_50_FPN_1x.yaml`. You can specify whether benchmarking is performed in FP16 or FP32 by specifying it as an argument to the benchmarking scripts.
 
@@ -472,9 +474,11 @@ Our results were obtained by running the `scripts/inference.sh <config/file/path
 
 To achieve these same results, follow the [Quick start guide](#quick-start-guide) outlined above.
 
-## Changelog
+## Release notes
+
+### Changelog
 March 2019
   - Initial release
 
-## Known Issues
+### Known Issues
 There are no known issues with this model.

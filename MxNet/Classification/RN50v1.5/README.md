@@ -1,6 +1,6 @@
 # ResNet50 v1.5 For MXNet
 
-## The model
+## Model overview
 The ResNet50 v1.5 model is a modified version of the [original ResNet50 v1 model](https://arxiv.org/abs/1512.03385).
 
 The difference between v1 and v1.5 is in the bottleneck blocks which require
@@ -43,7 +43,7 @@ During inference, we perform the following augmentation techniques:
 
 See `data.py` for more info.
 
-# Setup
+## Setup
 
 ## Requirements
 
@@ -77,7 +77,7 @@ and
 [Training With Mixed Precision documentation](https://docs.nvidia.com/deeplearning/sdk/mixed-precision-training/index.html).
 
 
-# Quick start guide
+## Quick start guide
 
 ## Docker
 
@@ -123,6 +123,7 @@ we do not preprocess the images when creating RecordIO file.
 python /opt/mxnet/tools/im2rec.py --pass-through --num-thread 40 train /data/imagenet/raw/train-jpeg
 python /opt/mxnet/tools/im2rec.py --pass-through --num-thread 40 val /data/imagenet/raw/val-jpeg
 ```
+## Advanced
 
 ## Running training
 
@@ -150,6 +151,7 @@ To run inference on a checkpointed model run:
 * For FP32
     `./examples/SCORE_FP32.sh <model prefix> <epoch>`
 
+## Performance
 
 ## Benchmark scripts
 
@@ -223,13 +225,14 @@ Inference performance reported as Total IPS (data + compute time taken into acco
 |            192 |  3828          |                |
 |            208 |  3832          |                |
 
+## Release notes
 
-# Changelog
+### Changelog
 
 1. Dec 19, 2018
   * Initial release (based on https://github.com/apache/incubator-mxnet/tree/master/example/image-classification)
 
 
-# Known Issues
+### Known Issues
 
 There are no known issues with this model.

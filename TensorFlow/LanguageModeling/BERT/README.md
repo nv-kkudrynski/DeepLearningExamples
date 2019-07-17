@@ -34,7 +34,7 @@ This repository provides a script and recipe to train BERT to achieve state of t
 * [Changelog](#changelog)
 * [Known issues](#known-issues)
 
-## The model
+## Model overview
 
 BERT, or Bidirectional Encoder Representations from Transformers, is a new method of pre-training language representations which obtains state-of-the-art results on a wide array of Natural Language Processing (NLP) tasks. This model is based on [BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding](https://arxiv.org/abs/1810.04805) paper. NVIDIA's BERT 19.03 is an optimized version of [Google's official implementation](https://github.com/google-research/bert), leveraging mixed precision arithmetic and tensor cores on V100 GPUS for faster training times while maintaining target accuracy.
 
@@ -180,7 +180,7 @@ For FP32 inference without XLA using a DGX-1 V100 32G, run:
 bash scripts/run_squad_inference.sh /results/model.ckpt 8 fp32 false
 ```
 
-## Details
+## Advanced
 The following sections provide greater details of the dataset, running training and inference, and the training results.
 
 ### Command line options
@@ -349,6 +349,8 @@ I0312 23:14:00.550973 140287431493376 run_squad.py:1397] 0 Inference Performance
 {"exact_match": 83.69914853358561, "f1": 90.8477003317459}
 ```
 
+## Performance
+
 ## Benchmarking
 The following section shows how to run benchmarks measuring the model performance in training and inference modes.
 
@@ -491,11 +493,13 @@ Our results were obtained by running the `scripts/run_squad_inference.sh` traini
 
 To achieve these same results, follow the [Quick Start Guide](#quick-start-guide) outlined above.
 
-## Changelog
+## Release notes
+
+### Changelog
 March 2019
 - Initial release
 
-## Known issues
+### Known issues
 There are no known issues with this model.
 
 

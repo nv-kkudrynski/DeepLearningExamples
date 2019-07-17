@@ -1,6 +1,6 @@
 # ResNet50 v1.5
 
-## The model
+## Model overview
 The ResNet50 v1.5 model is a modified version of the [original ResNet50 v1 model](https://arxiv.org/abs/1512.03385).
 
 The difference between v1 and v1.5 is that, in the bottleneck blocks which requires
@@ -81,7 +81,7 @@ and this recipe keeps the original assumption that validation is done on 224px i
 Using 288px images means that a lot more FLOPs are needed during inference to reach the same accuracy.
 
 
-# Setup
+## Setup
 ## Requirements
 
 Ensure you meet the following requirements:
@@ -122,9 +122,9 @@ which speeds up data loading when CPU becomes a bottleneck.
 
 Run training with `--data-backends dali-gpu` to enable DALI.
 
-# Quick start guide
+## Quick Start Guide
 
-## Geting the data
+## Getting the data
 
 The ResNet50 v1.5 script operates on ImageNet 1k, a widely popular image classification dataset from ILSVRC challenge.
 
@@ -177,6 +177,11 @@ Use `python ./main.py -h` to obtain the list of available options in the `main.p
 To run inference on a checkpointed model run:
 
 `python ./main.py --arch resnet50 --evaluate --resume <path to checkpoint> -b <batch size> <path to imagenet>`
+
+## Advanced
+ 
+
+## Performance
 
 ## Benchmarking
 
@@ -292,7 +297,9 @@ Each of this scripts will run 100 iterations and save results in benchmark.json 
 |     128 |  2615.6 |  1215.6 |
 |     256 |  2696.7 |  N/A    |
 
-# Changelog
+## Release notes
+
+### Changelog
 
 1. September 2018
   * Initial release
@@ -306,6 +313,6 @@ Each of this scripts will run 100 iterations and save results in benchmark.json 
   * gradients accumulation
 
 
-# Known issues
+### Known issues
 
 There are no known issues with this model.

@@ -25,7 +25,7 @@ This repository provides a script and recipe to train SSD320 v1.2 to achieve sta
 * [Changelog](#changelog)
 * [Known issues](#known-issues)
 
-## The model
+## Model overview
 
 The SSD320 v1.2 model is based on the [SSD: Single Shot MultiBox Detector](https://arxiv.org/abs/1512.02325) paper, which describes SSD as “a method for detecting objects in images using a single deep neural network”.
 
@@ -160,7 +160,7 @@ If you want to run inference with tensor cores acceleration, run:
 bash examples/SSD320_evaluate.sh <path to checkpoint>
 ```
 
-## Details
+## Advanced
 
 The following sections provide greater details of the dataset, running training and inference, and the training results.
 
@@ -229,6 +229,8 @@ For information about:
 - How to train using mixed precision, see the [Mixed Precision Training](https://arxiv.org/abs/1710.03740) paper and [Training With Mixed Precision](https://docs.nvidia.com/deeplearning/sdk/mixed-precision-training/index.html) documentation.
 - How to access and enable AMP for TensorFlow, see [Using TF-AMP](https://docs.nvidia.com/deeplearning/dgx/tensorflow-user-guide/index.html#tfamp) from the TensorFlow User Guide.
 - Techniques used for mixed precision training, see the [Mixed-Precision Training of Deep Neural Networks](https://devblogs.nvidia.com/mixed-precision-training-deep-neural-networks/) blog.
+
+## Performance
 
 ## Benchmarking
 The following section shows how to run benchmarks measuring the model performance in training and inference modes.
@@ -328,7 +330,9 @@ Our results were obtained by running the `examples/SSD320_FP{16,32}_inference.sh
 
 To achieve same results, follow the [Quick start guide](#quick-start-guide) outlined above.
 
-## Changelog
+## Release notes
+
+### Changelog
 
 March 2019
  * Initial release
@@ -336,6 +340,6 @@ March 2019
 May 2019
  * Test scripts updated
 
-## Known issues
+### Known issues
 There are no known issues with this model.
 
