@@ -136,9 +136,9 @@ def nvidia_tacotron2(pretrained=True, **kwargs):
 
     if pretrained:
         if fp16:
-            checkpoint = 'https://api.ngc.nvidia.com/v2/models/nvidia/tacotron2pyt_fp16/versions/1/files/nvidia_tacotron2pyt_fp16_20190306.pth'
+            checkpoint = 'https://api.ngc.nvidia.com/v2/models/nvidia/tacotron2_pyt_ckpt_amp/versions/19.09.0/files/nvidia_tacotron2pyt_fp16_20190427'
         else:
-            checkpoint = 'https://api.ngc.nvidia.com/v2/models/nvidia/tacotron2pyt_fp32/versions/1/files/nvidia_tacotron2pyt_fp32_20190306.pth'
+            checkpoint = 'https://api.ngc.nvidia.com/v2/models/nvidia/tacotron2_pyt_ckpt_fp32/versions/19.09.0/files/nvidia_tacotron2pyt_fp32_20190427'
         ckpt_file = _download_checkpoint(checkpoint, force_reload)
         ckpt = torch.load(ckpt_file)
         state_dict = ckpt['state_dict']
@@ -193,9 +193,9 @@ def nvidia_waveglow(pretrained=True, **kwargs):
 
     if pretrained:
         if fp16:
-            checkpoint = 'https://api.ngc.nvidia.com/v2/models/nvidia/waveglowpyt_fp16/versions/1/files/nvidia_waveglowpyt_fp16_20190306.pth'
+            checkpoint = 'https://api.ngc.nvidia.com/v2/models/nvidia/waveglow_ckpt_amp/versions/19.09.0/files/nvidia_waveglowpyt_fp16_20190427'
         else:
-            checkpoint = 'https://api.ngc.nvidia.com/v2/models/nvidia/waveglowpyt_fp32/versions/1/files/nvidia_waveglowpyt_fp32_20190306.pth'
+            checkpoint = 'https://api.ngc.nvidia.com/v2/models/nvidia/waveglow_ckpt_fp32/versions/19.09.0/files/nvidia_waveglowpyt_fp32_20190427'
         ckpt_file = _download_checkpoint(checkpoint, force_reload)
         ckpt = torch.load(ckpt_file)
         state_dict = ckpt['state_dict']
