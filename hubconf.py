@@ -363,10 +363,7 @@ def nvidia_ssd(pretrained=True, **kwargs):
         m = batchnorm_to_float(m)
 
     if pretrained:
-        if fp16:
-            checkpoint = 'https://api.ngc.nvidia.com/v2/models/nvidia/ssdpyt_fp16/versions/1/files/nvidia_ssdpyt_fp16_20190225.pt'
-        else:
-            checkpoint = 'https://api.ngc.nvidia.com/v2/models/nvidia/ssdpyt_fp32/versions/1/files/nvidia_ssdpyt_fp32_20190225.pt'
+        checkpoint = 'https://api.ngc.nvidia.com/v2/models/nvidia/ssd_pyt_ckpt_amp/versions/19.09.0/files/nvidia_ssdpyt_fp16_190826.pt'
         # ckpt = torch.hub.load_state_dict_from_url(checkpoint, progress=True, check_hash=False)
         ckpt_file = _download_checkpoint(checkpoint, force_reload)
         ckpt = torch.load(ckpt_file)
